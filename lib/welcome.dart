@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'signin.dart'; // 1. Sửa lại import trang Sign Up mới
+import 'explore.dart'; 
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -13,19 +13,19 @@ class WelcomeScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Column(
             children: [
-              const SizedBox(height: 50), 
+              const SizedBox(height: 50),
+
               
-              // Hình ảnh minh họa
               Expanded(
                 flex: 5,
                 child: Center(
                   child: Image.asset(
-                    'assets/welcome.jpg', 
+                    'assets/welcome.jpg',
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 30),
 
               // Tiêu đề
@@ -33,12 +33,12 @@ class WelcomeScreen extends StatelessWidget {
                 'Create a trip and get offers',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 26, 
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF2D2D2D),
                 ),
               ),
-              
+
               const SizedBox(height: 15),
 
               // Mô tả
@@ -46,13 +46,13 @@ class WelcomeScreen extends StatelessWidget {
                 'Fellow-4U helps you save time and get offers from hundred local guides that suit your trip.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 16, 
-                  color: Colors.grey[600],
+                  fontSize: 16,
+                  color: Colors.grey,
                   height: 1.5,
                 ),
               ),
 
-              const Spacer(), // Đẩy nút bấm xuống cuối trang
+              const Spacer(),
 
               // Nút GET STARTED
               SizedBox(
@@ -60,10 +60,12 @@ class WelcomeScreen extends StatelessWidget {
                 height: 55,
                 child: ElevatedButton(
                   onPressed: () {
-                    // 2. Chuyển hướng sang SignUpScreen 
+                    // chuyển sang ExploreScreen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignInScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => const ExploreScreen(),
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -75,12 +77,15 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'GET STARTED', 
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    'GET STARTED',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
             ],
           ),
